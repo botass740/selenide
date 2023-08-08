@@ -26,10 +26,10 @@ public class cardDeliveryTest {
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").sendKeys(currentData);
         $("[data-test-id='name'] input").setValue("Романов Максим Иванович");
-        $("[data-test-id='phone']").setValue("+79787574471");
+        $("[data-test-id='phone'] input").setValue("+79787574471");
         $("[data-test-id='agreement']").click();
         $("[button.button]").click();
-        $("[.notification__comtent]")
+        $("[.notification__content]")
                 .shouldBe(Condition.visible, Duration.ofSeconds(15))
                 .shouldHave(Condition.exactText("Встреча успешно забронирована на " + currentData));
     }
